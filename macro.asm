@@ -128,7 +128,7 @@
 main :
 	addi $s0, $zero, 1
 	addi $s1, $zero, 4
-	addi $s2, $zero, 0
+	addi $s2, $zero, 1
 	addi $s3, $zero, 3
 	
 	print_rational($s0,$s1)
@@ -143,5 +143,9 @@ main :
 	print_operation($s0, $s1, $s2, $s3,$s4, $s5, '*')
 	div_rational($s0, $s1, $s2, $s3,$s4, $s5)
 	print_operation($s0, $s1, $s2, $s3,$s4, $s5, '/')
+	j end
 is_zero:
 	irrational
+end:
+	li $v0, 10
+	syscall
